@@ -8,21 +8,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: hsl(270, 50%, 70%);
   color: #fff;
   text-align: center;
   padding: 10px;
 }
 
 nav {
-  text-align: center;
-  padding: 10px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 20px;
+  display: none;
 }
 
 main {
@@ -30,19 +23,25 @@ main {
   justify-content: center;
 }
 
-.button {
-  background-color: #555;
+button {
+  background-color: hsl(270, 50%, 80%);
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
+button:hover {
+  background: rgb(102, 51, 153);
+  border: 1px solid white;
+  color: white;
+}
 
 .container {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  width: 900px;
+  width: 100vw;
 }
 
 .section {
@@ -56,11 +55,12 @@ main {
 .section1 {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 30px;
 }
 
 .section1 img {
-  width: 50%;
+  width: 100%;
   height: auto;
   border-radius: 10px;
 }
@@ -68,10 +68,14 @@ main {
 .section1 h2 {
   font-size: 2.5rem;
 }
-
+.grayCat {
+  width: 100%;
+  height: auto;
+}
 .catGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  gap: 30px;
   width: 100%;
 }
 
@@ -79,10 +83,85 @@ main {
   width: 100%;
   height: auto;
 }
+.section form div {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+input,
+textarea {
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: none;
+}
 
 footer {
   background-color: #333;
   color: #fff;
   text-align: center;
   padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .barsMenu {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+  }
+  .container {
+    text-align: start;
+    width: 70vw;
+  }
+
+  .catGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .kontakta {
+  }
+}
+
+@media (min-width: 1024px) {
+  .section1 {
+    flex-direction: row;
+  }
+  .section1 img {
+    width: 50%;
+  }
+  .catGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .catGrid img:hover {
+    transition: all 1.5s ease-in-out;
+    border-radius: 30px;
+  }
+  .cat3:hover {
+    transform: scale(1.25) translate(100%, 50%);
+  }
+  .cat4:hover {
+    transform: scale(1.25) translate(0%, 100%);
+  }
+  .cat5:hover {
+    transform: scale(1.25) translate(-100%, 50%);
+  }
+  .cat6:hover {
+    transform: scale(1.25) translate(100%, -50%);
+  }
+
+  .cat7:hover {
+    transform: scale(1.25) translate(0%, -50%);
+  }
+  .cat8:hover {
+    transform: scale(1.25) translate(-100%, -50%);
+  }
 }
